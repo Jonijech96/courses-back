@@ -1,10 +1,12 @@
 const express = require("express");
 const initModels = require("./models/init.models");
+const userRouter = require("./routes/users.routes");
 const db = require("./utils/database");
 
 const app = express();
 
 app.use(express.json());
+app.use("/api/v1", userRouter);
 
 const PORT = 8000;
 
@@ -18,7 +20,7 @@ db.authenticate()
 
 initModels();
 
-db.sync({ force: true })
+db.sync({ force: false })
   .then(() => console.log("base de datos sincronizada"))
   .catch((error) => console.log(error));
 

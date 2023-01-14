@@ -15,8 +15,8 @@ const UsersCourses = db.define("users_courses", {
     allowNull: false,
   },
   courseId: {
-    allowNull: false,
     type: DataTypes.INTEGER,
+    allowNull: false,
     field: "course_id",
   },
 });

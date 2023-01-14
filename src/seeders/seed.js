@@ -8,39 +8,40 @@ const db = require("../utils/database");
 const users = [
   {
     firstName: "jonik",
-    lastname: "wick",
+    lastName: "wick",
     password: "1234",
     email: "jonik@gmail.com",
   },
   {
     firstName: "Ian",
-    lastname: "ianacus",
+    lastName: "ianacus",
     password: "1234",
     email: "ian@gmail.com",
   },
 ];
 
 const courses = [
-  { title: "Algebra", description: "turno mañana", instrutor: "Pedro" },
-  { title: "Literatura", description: "turno tarde", instrutor: "Juan" },
-  { title: "Networkin", description: "turno madrugada", instrutor: "Jhorman" },
+  { title: "Algebra", description: "turno mañana", instructor: "Pedro" },
+  { title: "Literatura", description: "turno tarde", instructor: "Juan" },
+  { title: "Networkin", description: "turno madrugada", instructor: "Jhorman" },
 ];
 
 const categories = [
-  { name: "ciencias exactas", course_id: "1" },
-  { name: "Letras", course_id: "2" },
-  { name: "Empleo", course_id: "3" },
+  { name: "ciencias exactas", courseId: "1" },
+  { name: "Letras", courseId: "2" },
+  { name: "Empleo", courseId: "3" },
 ];
 
 const videos = [
-  { title: "Integrales", url: "video-integral.com", course_id: 1 },
-  { title: "Integrales", url: "video-integral.com", course_id: 1 },
-  { title: "Integrales", url: "video-integral.com", course_id: 3 },
+  { title: "Integrales", url: "video-integral.com", courseId: 1 },
+  { title: "Matematics", url: "video-Matematics.com", courseId: 1 },
+  { title: "Geometric", url: "video-Geometric.com", courseId: 3 },
 ];
 
 const userCourses = [
-  { user_id: 1, course_id: 2 },
-  { user_id: 2, course_id: 3 },
+  { userId: 1, courseId: 2 },
+  { userId: 2, courseId: 3 },
+  { userId: 2, courseId: 1 },
 ];
 
 db.sync({ force: true }).then(() => {
@@ -51,7 +52,7 @@ db.sync({ force: true }).then(() => {
   }, 100);
   setTimeout(() => {
     userCourses.forEach((userCourse) => UsersCourses.create(userCourse));
-  }, 200);
+  }, 250);
   setTimeout(() => {
     categories.forEach((category) => Categories.create(category));
   }, 300);
