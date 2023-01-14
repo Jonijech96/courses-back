@@ -1,12 +1,13 @@
+const db = require("./utils/database");
 const express = require("express");
 const initModels = require("./models/init.models");
 const userRouter = require("./routes/users.routes");
-const db = require("./utils/database");
+const coursesRouter = require("./routes/courses.routes");
 
 const app = express();
 
 app.use(express.json());
-app.use("/api/v1", userRouter);
+app.use("/api/v1", userRouter,coursesRouter);
 
 const PORT = 8000;
 
