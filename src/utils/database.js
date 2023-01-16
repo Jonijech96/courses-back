@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 
 const db = new Sequelize({
-  database: "courseapp",
+  database: "coursesapp",
   username: "postgres",
   host: "localhost",
   port: "5432",

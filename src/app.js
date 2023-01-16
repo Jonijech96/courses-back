@@ -3,11 +3,21 @@ const express = require("express");
 const initModels = require("./models/init.models");
 const userRouter = require("./routes/users.routes");
 const coursesRouter = require("./routes/courses.routes");
+const usersCoursesRouter = require("./routes/usersCourses.routes");
+const videosRouter = require("./routes/videos.routes");
+const categories = require("./routes/categories.routes");
 
 const app = express();
 
 app.use(express.json());
-app.use("/api/v1", userRouter,coursesRouter);
+app.use(
+  "/api/v1",
+  userRouter,
+  coursesRouter,
+  usersCoursesRouter,
+  videosRouter,
+  categories
+);
 
 const PORT = 8000;
 
